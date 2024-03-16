@@ -1,0 +1,233 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    /* COLOURS */
+    /* Background */
+    --light-background: #fff;
+
+    /* Button colour */
+    --login-colour: linear-gradient(to right, rgba(206, 74, 126, 1), rgba(47, 7, 67, .5), rgba(206, 74, 126, 1));
+    --continue-colour: linear-gradient(to right, rgba(49, 71, 85, 1), rgba(49, 71, 85, 1), rgba(38, 160, 218, 1));
+    --logout-colour: linear-gradient(to right, rgba(240, 0, 0, 0), rgba(220, 40, 30, .5), rgba(240, 0, 0, 1));
+
+    /* FONTS */
+    /* Font Size */
+    --large-fonts: 4rem;
+    --medium-fonts: 3.2rem;
+    --small-fonts: 1.6rem;
+    --tiny-fonts: 1rem;
+
+    /* Font Weight */
+
+}
+*{
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+}
+/* Reusable Classes */
+
+/* LOGIN PAGE */
+div.login-container{
+    display: flex;
+    /* background-color: #000; */
+    height: 100vh;
+    width: 100%;
+}
+.login-item{
+    width: 2800px;
+}
+.hero-img{
+    flex-grow: 1;
+    height: 100vh;
+    /* background-image: url("/images/SATS-UI.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+}
+.hero-img img{
+    width: 100%;
+    height: 100%;
+}
+.login{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: 100vh;
+}
+div.login::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/blackwall.jpg");
+    background-size: cover;
+}
+.login-form{
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin: auto auto; */
+    width: 90%;
+    /* background-color: #CE4A7E; */
+}
+form{
+    max-width: 70%;
+    padding-top: 20px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+div.mb-3{
+    width: inherit;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+/* div.mb-3>label{
+    color: #fff;
+} */
+input{
+    width: 100% !important;
+}
+#submit-btn{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+    background-size: 200% auto;
+    font-size: var(--small-fonts);
+    /* box-shadow: 0 0 20px #eee; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #fff;
+    width: 50%;
+    margin: 40px auto;
+    z-index: 9;
+}
+.login-btn{
+    background-image: var(--login-colour);
+}
+.login-btn:hover, .login-btn:focus{
+    background-image: var(--continue-colour);
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
+/* LEVEL PAGE */
+.level-header{
+    margin-top: 50px;
+}
+.level-form{
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#level-form select:nth-child(1){
+    margin-bottom: 40px !important;
+}
+#level-form select option:hover{
+    background-image: var(--login-colour) !important;
+}
+.continue-btn{
+    background-image: var(--continue-colour);
+    margin-top: 8rem !important;
+}
+.continue-btn:hover, .continue-btn:focus{
+    color: #fff !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 8px #000;
+}
+
+/* HOME PAGE */
+.home-message{
+    margin-top: 20px;
+    width: 82%;
+    margin-left: 18%;
+}
+.home-message>*{
+    text-align: center;
+}
+.side-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 18%;
+    background-color: #000;
+}
+.side-bar h3{
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: var(--medium-fonts);
+}
+.side-menu{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: right;
+}
+.side-menu ul>li{
+    list-style-type: none;
+    font-size: var(--small-fonts);
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.side-menu ul>li>a{
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+/* For smaller screens */
+@media (width <= 540px) {
+    :root{
+        /* FONTS */
+        /* Font Size */
+        --large-fonts: 3rem;
+        --medium-fonts: 2.8rem;
+        --small-fonts: 1.4rem;
+        /* --tiny-fonts: 1rem; */
+    }
+    /* LOGIN PAGE */
+    div.login-container{
+        justify-content: center;
+        flex-direction: column;
+        /* align-items: center; */
+        padding: 20px;
+        /* background-color: aqua; */
+    }
+    .hero-img{
+        /* display: none; */
+        width: 100%;
+        height: 50vh;
+    }
+    .login{
+        margin-top: -80px;
+        width: 100%;
+        height: 50vh;
+    }
+    input{
+        width: 75vw !important;
+        margin-left: -2rem;
+    }
+    .login-btn{
+        width: 100%;
+        margin: 20px auto;
+    }
+}

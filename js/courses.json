@@ -1,0 +1,7 @@
+{
+    "100": ["Mathematics", "Physics", "Chemistry"],
+    "200": ["Biology", "Computer Science", "English"],
+    "300": ["History", "Geography", "Economics"],
+    "400": ["Psychology", "Sociology", "Anthropology"],
+    "500": ["Engineering", "Medicine", "Law"]
+}

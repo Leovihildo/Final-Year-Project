@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATSUI</title>
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/4340599b00.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Stylesheet-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- Include the Bootstrap 4 theme -->
+    <link rel="stylesheet" href="@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
+
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="css/satsui.css">
+</head>
+<body>
+    <div class="container">
+        <div class="level-header">
+            <h1>Select the level and course of the class</h1>
+        </div>
+        <div class="level-form">
+            <form id="level-form">
+                <select class="form-select level-select form-select-lg mb-3" aria-label="Large select example">
+                    <option selected>Choose Level</option>
+                    <option value="100">Level 100</option>
+                    <option value="200">Level 200</option>
+                    <option value="300">Level 300</option>
+                    <option value="400">Level 400</option>
+                    <option value="500">Level 500</option>
+                  </select>
+
+                  <select class="form-select course-select form-select-lg mb-3" aria-label="Large select example">
+                    <!-- <option selected></option> -->
+                    <!-- Changes dynamically -->
+                  </select>
+
+                  <button class="btn continue-btn" type="submit" id="submit-btn">CONTINUE</button>
+            </form>
+        </div>
+    </div>
+    
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+</body>
+</html>
