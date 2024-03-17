@@ -10,7 +10,7 @@ if (document.querySelector(".login-container")){
   loginform.addEventListener('submit', function(event){
     event.preventDefault();
 
-    location.href = 'http://127.0.0.1:5500/level.html';
+    location.href = 'https://leovihildo.github.io/Final-Year-Project/level.html';
 })
 };
 
@@ -74,7 +74,7 @@ if (document.querySelector(".level-select")) {
       alert("Please fill in all required fields!");
     }
     else{
-      location.href = 'http://127.0.0.1:5500/main.html';
+      location.href = 'https://leovihildo.github.io/Final-Year-Project/main.html';
     }
   })
 }
