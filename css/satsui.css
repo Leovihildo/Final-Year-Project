@@ -69,7 +69,7 @@ div.login::before{
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/blackwall.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/blackwall.jpg");
     background-size: cover;
 }
 .login-form{
