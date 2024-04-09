@@ -181,11 +181,6 @@ input{
     display: flex;
     align-items: center;
 }
-/* .features-container{
-    width: 82% !important;
-    margin-left: 18%;
-    background-color: aqua;
-} */
 .features{
     align-items: center;
     justify-content: center;
@@ -229,16 +224,13 @@ input{
 }
 
 /* RESPONSIVESNESS */
-@media only screen and (width <= 768px){
-    .features.row{
-        display: block;
-    }
-    .features a{
-        width: 100%;
-    }
-}
 /* For Bigger screens */
 @media (width > 1024px){
+    .features-container{
+        width: 77%;
+        margin-left: 22%;
+        /* background-color: aqua; */
+    }
     .side-bar{
         position: absolute;
         top: 0;
@@ -265,18 +257,26 @@ input{
     .side-menu ul>li>a{
        justify-content: space-evenly;
     }
-    #submit-btn.btn.btn-log-out i{
-        margin-right: 10px;
-    }
-    .btn.btn-log-out{
-        background-image: var(--logout-colour);
+    #submit-btn.btn.btn-log-out{
+        padding: 15px 0;
+        width: 150px;
+        display: flex !important;
+        justify-content: space-evenly;
+        align-items: center;
+        background-image: none;
         background-size: cover;
         background-repeat: no-repeat;
-        padding: 10px 20px;
+        -webkit-transition: background-image, width 2s linear;
+        -moz-transition: background-image, width 2s linear;
+        -o-transition: background-image, width 2s linear;
+        transition: background-image, width 2s linear;
     }
-    .btn-log-out:hover{
+    #submit-btn.btn.btn-log-out i, #submit-btn.btn.btn-log-out span{
+        font-size: calc(7px + var(--tiny-fonts));
+    }
+    #submit-btn.btn.btn-log-out:hover{
         background-image: var(--logout-colour);
-        transform: scale(1.03);
+        /* transform: scale(1.03); */
     }
     .features-container{
         height: 100%;
@@ -287,6 +287,16 @@ input{
         transform: scale(1.03);
     }
 }
+/*  */
+@media (width > 1280px){
+    #submit-btn.btn.btn-log-out{
+        width: 180px;
+        display: flex !important;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+/* For Smaller Screens */
 @media (width <= 1024px) {
     /* HOME PAGE */
     .home-message{
@@ -299,6 +309,8 @@ input{
         padding: 10px 30px;
     }
     .features-container{
+        margin: 30px auto;
+        width: 94%;
         height: 100svh;
         margin-bottom: 100%;
     }
@@ -311,7 +323,7 @@ input{
         bottom: 0;
         left: 0;
         height: fit-content;
-        width: 100%;
+        width: 100vw;
         padding: 10px 15px;
         margin-top: 100svh;
         background-color: #000;
@@ -346,6 +358,17 @@ input{
         /* margin-left: -10px; */
         padding: 7px 5px;
         border-radius: 0px;
+    }
+}
+/*  */
+@media only screen and (width <= 768px){
+    .features.row{
+        display: block;
+    }
+    .features a{
+        width: 80%;
+        display: block;
+        margin: 60px auto;
     }
 }
 /* For smaller screens */
