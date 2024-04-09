@@ -5,12 +5,33 @@
 // The level page should be loaded on the screen 
 var loginform = document.getElementById('login-form');
 
+
 // check if we are on the login page
 if (document.querySelector(".login-container")){
+  // Function to show the preloader
+function showPreloader() {
+  document.getElementById('preloader').style.display = 'block';
+}
+
+// Function to hide the preloader
+function hidePreloader() {
+  document.getElementById('preloader').style.display = 'none';
+}
+
+// Show preloader initially
+showPreloader();
+
+// Hide preloader when the page has fully loaded
+window.addEventListener('load', function() {
+  hidePreloader();
+});
+
+// Disable the submit button from redirecting
   loginform.addEventListener('submit', function(event){
     event.preventDefault();
 
     location.href = 'https://leovihildo.github.io/Final-Year-Project/level.html';
+   // location.href = 'http://127.0.0.1:5500/level.html';
 })
 };
 
@@ -57,6 +78,9 @@ if (document.querySelector(".level-select")) {
     fetchCourses().then(courses => {
       var selectedLevel = courses[levelDropdown.value];
       updateCourseDropdown(selectedLevel);
+      
+      // Store the selected level in local storage
+      localStorage.setItem('selectedLevel', levelDropdown.value);
     });
   });
 
@@ -69,12 +93,39 @@ if (document.querySelector(".level-select")) {
   levelForm.addEventListener('submit', (e)=>{
     e.preventDefault();
 
-    // console.log(document.querySelector(".course-select").value);
+    // Retrieve the selected level from local storage
+    var selectedLevel = localStorage.getItem('selectedLevel');
+    
     if ((document.querySelector(".course-select").value === "") || (document.querySelector(".level-select").value === "")){
       alert("Please fill in all required fields!");
     }
     else{
+      // Store the selected course in local storage for use on the next page
+      localStorage.setItem('selectedCourse', document.querySelector(".course-select").value);
+      
+      //location.href = 'http://127.0.0.1:5500/main.html';
       location.href = 'https://leovihildo.github.io/Final-Year-Project/main.html';
     }
   })
 }
+
+
+
+
+
+// ---- HOME PAGE ----
+// Check if we are on the home page where this functionality is required
+if (document.querySelector(".home-message")) {
+  // Retrieve the stored values from local storage
+  var selectedLevel = localStorage.getItem('selectedLevel');
+  var selectedCourse = localStorage.getItem('selectedCourse');
+
+  // Update the content of the home message based on the stored values
+  if (selectedLevel && selectedCourse) {
+    document.querySelector(".home-message").innerHTML = `<h1>Welcome to SATS-UI</h1><p>Selected Level: ${selectedLevel}</p><p>Selected Course: ${selectedCourse}</p>`;
+  } else {
+    document.querySelector(".home-message").innerHTML = `<h1>Welcome to SATS-UI</h1><p>No selection made.</p>`;
+  }
+}
+
+

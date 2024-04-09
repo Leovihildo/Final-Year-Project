@@ -283,8 +283,24 @@ input{
         margin-left: 22%;
         margin-top: 10rem;
     }
-    .features div:hover{
+    .features div:not(.attendance-table):hover{
         transform: scale(1.03);
+    }
+    #submit-btn.btn.btn-stop{
+        position: absolute;
+        top: 20%;
+        right: 7%;
+        width: 180px;
+        background-color: rgba(240, 0, 0, .8);
+        box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
+    }
+    #submit-btn.btn.btn-stop:hover{
+        background-color: rgba(0, 0, 0, .8);
+        transition: background-color 1s linear;
+    }
+    .attendance-table{
+        margin: 20px auto;;
+        width: 90%;
     }
 }
 /*  */
@@ -342,6 +358,12 @@ input{
     }
     #submit-btn.btn.btn-log-out{
         margin-top: 0;
+    }
+    #submit-btn.btn.btn-stop{
+        width: 80%;
+        margin-top: 0;
+        background-color: rgba(240, 0, 0, .8);
+        box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
     }
     .side-menu ul>li>a{
         flex-direction: column;
